@@ -1,0 +1,39 @@
+inventory-backend/target/
+
+inventory-frontend/.DS_Store
+inventory-frontend/.thumbs.db
+inventory-frontend/node_modules
+
+# Quasar core related directories
+inventory-frontend/.quasar
+inventory-frontend/dist
+inventory-frontend/quasar.config.*.temporary.compiled*
+
+# Cordova related directories and files
+inventory-frontend/src-cordova/node_modules
+inventory-frontend/src-cordova/platforms
+inventory-frontend/src-cordova/plugins
+inventory-frontend/src-cordova/www
+
+# Capacitor related directories and files
+inventory-frontend/src-capacitor/www
+inventory-frontend/src-capacitor/node_modules
+
+# BEX related directories and files
+inventory-frontend/src-bex/www
+inventory-frontend/src-bex/js/core
+
+# Log files
+inventory-frontend/npm-debug.log*
+inventory-frontend/yarn-debug.log*
+inventory-frontend/yarn-error.log*
+
+# Editor directories and files
+inventory-frontend/.idea
+inventory-frontend/*.suo
+inventory-frontend/*.ntvs*
+inventory-frontend/*.njsproj
+inventory-frontend/*.sln
+
+# local .env files
+inventory-frontend/.env.local*
