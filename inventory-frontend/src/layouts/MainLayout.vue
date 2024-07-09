@@ -1,21 +1,13 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+    <q-header elevated class="bg-accent">
       <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
+        <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
 
         <q-toolbar-title>
-          Quasar App
+          Inventory and Borrowing System
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
 
@@ -28,7 +20,7 @@
         <q-item-label
           header
         >
-          Essential Links
+          BSHM
         </q-item-label>
 
         <EssentialLink
@@ -51,46 +43,70 @@ import EssentialLink, { EssentialLinkProps } from 'components/EssentialLink.vue'
 
 const essentialLinks: EssentialLinkProps[] = [
   {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
+    title: 'Home',
+    icon: 'mdi-home',
+    link_name: 'home',
+    expand: false,
+    expand_link: []
   },
   {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
+    title: 'Inventory',
+    icon: 'mdi-list-box',
+    expand: true,
+    expand_link: [
+      {
+        title: 'Home',
+        caption: 'Dashboard page',
+        icon: 'mdi-home',
+        link_name: 'tables'
+      },
+    ]
   },
   {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
+    title: 'Transactions',
     icon: 'chat',
-    link: 'https://chat.quasar.dev'
+    link_name: 'https://chat.quasar.dev',
+    expand: false,
+    expand_link: [
+      {
+        title: 'Borrow',
+        icon: 'mdi-home',
+        link_name: 'borrow'
+      },
+    ]
+
   },
   {
     title: 'Forum',
     caption: 'forum.quasar.dev',
     icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
+    link_name: 'https://forum.quasar.dev',
+    expand: false,
+    expand_link: []
   },
   {
     title: 'Twitter',
     caption: '@quasarframework',
     icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
+    link_name: 'https://twitter.quasar.dev',
+    expand: false,
+    expand_link: []
   },
   {
     title: 'Facebook',
     caption: '@QuasarFramework',
     icon: 'public',
-    link: 'https://facebook.quasar.dev'
+    link_name: 'https://facebook.quasar.dev',
+    expand: false,
+    expand_link: []
   },
   {
     title: 'Quasar Awesome',
     caption: 'Community Quasar projects',
     icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
+    link_name: 'https://awesome.quasar.dev',
+    expand: false,
+    expand_link: []
   }
 ];
 
