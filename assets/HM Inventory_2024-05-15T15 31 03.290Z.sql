@@ -10,6 +10,7 @@ CREATE OR REPLACE TABLE `user_detail` (
 	`mtime` TIMESTAMP NOT NULL DEFAULT current_timestamp,
 	PRIMARY KEY(`id`)
 );
+
 CREATE OR REPLACE TABLE `user_login` (
 	`id` INT NOT NULL AUTO_INCREMENT UNIQUE,
 	`user_id` INT NOT NULL,
@@ -21,6 +22,7 @@ CREATE OR REPLACE TABLE `user_login` (
 	`mtime` TIMESTAMP NOT NULL DEFAULT current_timestamp,
 	PRIMARY KEY(`id`)
 );
+
 CREATE OR REPLACE TABLE `item` (
 	`id` INT NOT NULL AUTO_INCREMENT UNIQUE,
 	`category_id` INT NOT NULL,
@@ -32,6 +34,7 @@ CREATE OR REPLACE TABLE `item` (
 	`mtime` TIMESTAMP NOT NULL DEFAULT current_timestamp,
 	PRIMARY KEY(`id`)
 );
+
 CREATE OR REPLACE TABLE `category` (
 	`id` INT NOT NULL AUTO_INCREMENT UNIQUE,
 	`name` VARCHAR(255) NOT NULL,
@@ -39,6 +42,7 @@ CREATE OR REPLACE TABLE `category` (
 	`mtime` TIMESTAMP NOT NULL,
 	PRIMARY KEY(`id`)
 );
+
 CREATE OR REPLACE TABLE `transaction` (
 	`id` INT NOT NULL AUTO_INCREMENT UNIQUE,
 	`item_id` INT NOT NULL,
@@ -49,6 +53,7 @@ CREATE OR REPLACE TABLE `transaction` (
 	`mtime` TIMESTAMP NOT NULL DEFAULT current_timestamp,
 	PRIMARY KEY(`id`)
 );
+
 CREATE OR REPLACE TABLE `notification` (
 	`id` INT NOT NULL AUTO_INCREMENT UNIQUE,
 	`item_id` INT NOT NULL,
@@ -61,6 +66,7 @@ CREATE OR REPLACE TABLE `notification` (
 	`mtime` TIMESTAMP NOT NULL DEFAULT current_timestamp,
 	PRIMARY KEY(`id`)
 );
+
 ALTER TABLE `user_login`
 ADD FOREIGN KEY(`user_id`) REFERENCES `user_detail`(`id`)
 ON UPDATE NO ACTION ON DELETE NO ACTION;
